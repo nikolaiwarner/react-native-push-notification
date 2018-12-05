@@ -25,10 +25,16 @@ import java.util.Random;
 
 import static com.dieam.reactnativepushnotification.modules.RNPushNotification.LOG_TAG;
 
-public class RNPushNotificationListenerService extends FirebaseMessagingService {
+import com.hoxfon.react.RNTwilioVoice.fcm.VoiceFirebaseMessagingService;
+
+public class RNPushNotificationListenerService extends VoiceFirebaseMessagingService {
 
     @Override
     public void onMessageReceived(RemoteMessage message) {
+
+        // Forward message to Twilio Voice messaging service
+        super.onMessageReceived(message);
+
         String from = message.getFrom();
         RemoteMessage.Notification remoteNotification = message.getNotification();
 

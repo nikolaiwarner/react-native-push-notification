@@ -55,4 +55,6 @@ dependencies {
     compile "com.google.android.gms:play-services-gcm:$googlePlayServicesVersion"
     compile 'me.leolin:ShortcutBadger:1.1.8@aar'
     compile "com.google.firebase:firebase-messaging:$firebaseVersion"
+
+    compile project(':react-native-twilio-programmable-voice')
 }
